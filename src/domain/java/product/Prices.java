@@ -26,7 +26,7 @@ public class Prices {
 
         // displaying key, value pairs of prices
         prices.forEach((String name, Double price) -> {
-            System.out.println(name + ": " + ft.format(price) + "$");
+            System.out.println("\t" + name + ": " + ft.format(price) + "$");
         });
     }
 }

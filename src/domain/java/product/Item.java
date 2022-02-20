@@ -1,5 +1,7 @@
 package product;
 
+import java.text.DecimalFormat;
+
 public class Item implements Product{
     String name;
     Double price;
@@ -16,28 +18,46 @@ public class Item implements Product{
         this.extra = extra;
     }
 
-
     @Override
     public String name() {
-        return null;
+        return name;
     }
 
     @Override
     public Double price() {
-        return null;
+        return price;
     }
 
     @Override
     public String extra() {
-        return null;
+        return extra;
     }
 
     @Override
     public Boolean isRegular() {
-        return null;
+        return extra != null;
     }
 
-    // to string
-    // equals
-    // hashcode
+    // expected item format, as CLI desired output
+    @Override
+    public String toString() {
+        DecimalFormat ft = new DecimalFormat("0.00");
+        return name + "...." + ft.format(price()) + "$";
+    }
+
+    // to compare Item objects
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Item) {
+            return this.name.equals(((Item)obj).name);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return this.name.hashCode();
+    }
+
+
 }
