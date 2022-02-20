@@ -5,7 +5,7 @@ import java.util.Map;
 import java.text.DecimalFormat;
 
 public class Prices {
-    private static final Map<String, Double> prices = new HashMap<String, Double>();
+    public static final Map<String, Double> prices = new HashMap<String, Double>();
 
     public static void init_prices() {
         // array of enumType created

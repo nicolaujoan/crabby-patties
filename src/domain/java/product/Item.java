@@ -35,24 +35,28 @@ public class Item implements Product{
 
     @Override
     public Boolean isRegular() {
-        return extra != null;
+        return extra == null;
     }
 
     // expected item format, as CLI desired output
     @Override
     public String toString() {
         DecimalFormat ft = new DecimalFormat("0.00");
-        return name + "...." + ft.format(price()) + "$";
+        if (this.isRegular()) {
+            return name() + "...." + ft.format(price) + "$";
+        }
+        return name() + " w/ " + extra() + "...." + ft.format(price) + "$ + "
+                + Prices.prices.get(extra()) + "$" ;
     }
 
     // to compare Item objects
-    @Override
-    public boolean equals(Object obj) {
-        if (obj instanceof Item) {
-            return this.name.equals(((Item)obj).name);
-        }
-        return false;
-    }
+//    @Override
+//    public boolean equals(Object obj) {
+//        if (obj instanceof Item) {
+//            return this.name.equals(((Item)obj).name);
+//        }
+//        return false;
+//    }
 
     @Override
     public int hashCode() {
