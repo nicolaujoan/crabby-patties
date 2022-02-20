@@ -133,6 +133,67 @@ public class App {
         soda = new Item("Seafoam Soda", 1.00, "large");
         display(soda);
 
+         /**
+         * Buble Fish sigue zampando
+         * y realiza una comanda cargada
+         * de extras.
+         */
+
+        order = new Order();
+
+        order.addItem("Krabby Patty", 1.25, "cheese");
+        order.addItem("Coral Bits", 1.00);
+        order.addItem("Kelp Rings", 1.50, "sauce");
+        order.addItem("Golden Loaf", 2.00, "sauce");
+        order.addItem("Seafoam Soda", 1.00, "large");
+        order.addItem("Coral Bits", 1.00, "large");
+
+        // Utiliza el diccionario Prices para incluir
+       // el precio de los extras en la salida por consola.
+        order.display();
+
+
+        /*
+         * Define el importe a cargar por cada extra.
+         *
+         * Configura los tipos de Extras:
+         *  - extra Cheese +0.25
+         *  - extra sauce +0.50
+         *  - size medium +0.25
+         *  - size large +0.50
+         *
+         * Sigue los casos test del paquete Extras
+         * para implementar 4 clases que se encargan
+         * de sumar el precio base de los Items
+         * y de los extras para calcular el precio
+         * total de Order (la comanda).
+         *
+         * El precio total de la comanda se guarda en Order.
+         */
+
+//        Extra regular = new Regular(); // suma el precio base
+//        Extra cheese = new CheeseExtra(); // suma el precio del extra cheese
+//        Extra sauce = new SauceExtra(); // suma el precio de sauce
+//        Extra size = new SizeLargeExtra(); // suma el precio del tamanho Large
+
+//        regular.setNextExtra(cheese);
+//        cheese.setNextExtra(sauce);
+//        sauce.setNextExtra(size);
+
+        /*
+         * Squidward Tentacles genera el recibo,
+         * la app calcula el importe total de la comanda
+         * y lo muestra en pantalla.
+         */
+
+        System.out.print("\n\t --- PRINTIG RECEIPT BIPBIPBIP ---  \n");
+
+//        Ticket receiptExtra = new Receipt(order);
+//        receiptExtra.setChain(regular);
+//
+//        receiptExtra.total();
+//        receiptExtra.print();
+
     }
 
     public static void display(Product item) {
