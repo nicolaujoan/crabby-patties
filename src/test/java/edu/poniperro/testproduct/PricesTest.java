@@ -8,4 +8,9 @@ import product.Prices;
 
 public class PricesTest {
 
+    @Test
+    public void displayTest() {
+        Prices.init_prices();
+        Prices.display();
+    }
 }

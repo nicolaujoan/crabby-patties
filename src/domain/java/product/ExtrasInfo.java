@@ -1,7 +1,7 @@
 package product;
 
 public enum ExtrasInfo {
-    CHEESSE(0.25), SAUCE(0.50), MEDIUM(0.25), LARGE(0.50);
+    CHEESE(0.25), SAUCE(0.50), MEDIUM(0.25), LARGE(0.50);
 
     // declaring private variable for getting values
     private Double price;
