@@ -46,15 +46,17 @@ public class Item implements Product{
             return name() + "...." + ft.format(price) + "$";
         }
         return name() + " w/ " + extra() + "...." + ft.format(price) + "$ + "
-                + ft.format(Prices.prices.get(extra())) + "$" ;
+                + ft.format(Prices.prices.get(extra)) + "$" ;
     }
 
-    // some problems with item factory, this is because it is commented
-    // to compare Item objects
 //    @Override
 //    public boolean equals(Object obj) {
 //        if (obj instanceof Item) {
-//            return this.name.equals(((Item)obj).name);
+//            if (((Item) obj).isRegular()) {
+//                return this.name.equals(((Item) obj).name);
+//            } else {
+//                return this.name.equals(((Item) obj).name) && this.extra.equals(((Item) obj).extra);
+//            }
 //        }
 //        return false;
 //    }

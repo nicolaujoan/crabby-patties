@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 import product.Item;
 import product.ItemFactory;
+import product.Prices;
 
 public class ItemFactoryTest {
 
@@ -47,10 +48,9 @@ public class ItemFactoryTest {
 
     @Test
     public void get_extra_item_test() {
-
+        Prices.init_prices();
         Item item = ItemFactory.getItem("Krabby Patty", 1.25, "cheese");
         assertNotNull(item);
-
         assertEquals("Krabby Patty w/ cheese....1,25$", item.toString());
         assertEquals(1, ItemFactory.size());
 
@@ -81,6 +81,17 @@ public class ItemFactoryTest {
         assertEquals(1, ItemFactory.size());
 
         Item kpatty = ItemFactory.getItem("Krabby Patty", 1.25);
+        assertEquals(2, ItemFactory.size());
+        assertNotSame(kpattywc,kpatty);
+    }
+
+    @Test
+    public void get_item_with_different_extras() {
+        Item kpattywc = ItemFactory.getItem("Krabby Patty", 1.25, "cheese");
+        assertNotNull(kpattywc);
+        assertEquals(1, ItemFactory.size());
+
+        Item kpatty = ItemFactory.getItem("Krabby Patty", 1.25, "bacon");
         assertEquals(2, ItemFactory.size());
         assertNotSame(kpattywc,kpatty);
     }

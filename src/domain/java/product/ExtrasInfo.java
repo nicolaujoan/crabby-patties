@@ -12,7 +12,7 @@ public enum ExtrasInfo {
     }
 
     // enum constructor, cannot be public or protected
-    private ExtrasInfo(Double price) {
+    ExtrasInfo(Double price) {
         this.price = price;
     }
 }

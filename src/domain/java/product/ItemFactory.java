@@ -5,8 +5,9 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
 
+
 public class ItemFactory {
-    private static Set<Item> itemsFactory = new HashSet<Item>();
+    private static final Set<Item> itemsFactory = new HashSet<Item>();
 
     public static Item getItem(String name, double price) {
         Optional<Item> desiredItem = itemsFactory.stream()
@@ -24,7 +25,9 @@ public class ItemFactory {
     // when the item has an extra ingredient
     public static Item getItem(String name, double price, String extra) {
         Optional<Item> desiredItem = itemsFactory.stream()
-                .filter(i -> !i.isRegular() && Objects.equals(i.name(), name))
+                .filter(i -> !i.isRegular()
+                        && Objects.equals(i.name(), name)
+                        && Objects.equals(i.extra, extra))
                 .findFirst();
         if (desiredItem.isPresent()) {
             return desiredItem.get();
