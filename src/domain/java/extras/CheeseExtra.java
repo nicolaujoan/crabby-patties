@@ -21,6 +21,6 @@ public class CheeseExtra extends Extra{
                 comanda.updateTotal(CHEESE_PRICE);
             }
         }
-        nextExtra.ifPresent(extra -> extra.sumExtras(comanda));
+        nextExtra.ifPresent(extra -> nextExtra.get().sumExtras(comanda));
     }
 }

@@ -20,6 +20,6 @@ public class SizeLargeExtra extends Extra{
                 comanda.updateTotal(SIZE_PRICE);
             }
         }
-        nextExtra.ifPresent(extra -> extra.sumExtras(comanda));
+        nextExtra.ifPresent(extra -> nextExtra.get().sumExtras(comanda));
     }
 }
