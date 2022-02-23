@@ -1,15 +1,24 @@
 package extras;
 
 import comanda.Comanda;
-import product.Prices;
+import product.Item;
+
+import java.util.List;
 
 public class SauceExtra extends Extra {
-    private Double SAUCE_PRICE = Prices.prices.get(SAUCE);
+    private Double SAUCE_PRICE = 0.50;
 
-    public SauceExtra(){}
+    public SauceExtra(){
+        extraProduct = SAUCE;
+    }
 
     @Override
     public void sumExtras(Comanda comanda) {
-        comanda.updateTotal(SAUCE_PRICE);
+        List<Item> items = comanda.itemList();
+        for (Item item: items) {
+            if (item.extra().equals(extraProduct)) {
+                comanda.updateTotal(SAUCE_PRICE);
+            }
+        }
     }
 }
