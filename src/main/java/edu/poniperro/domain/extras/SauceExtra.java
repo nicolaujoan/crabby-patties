@@ -20,6 +20,6 @@ public class SauceExtra extends Extra {
                 comanda.updateTotal(SAUCE_PRICE);
             }
         }
-        nextExtra.ifPresent(extra -> extra.sumExtras(comanda));
+        nextExtra.ifPresent(extra -> nextExtra.get().sumExtras(comanda));
     }
 }
