@@ -5,7 +5,7 @@ import extras.Extra;
 
 import java.text.DecimalFormat;
 
-public class Receipt implements Ticket{
+public class Receipt implements Ticket {
     private Double total = 0.00;
     public Comanda order;
     public Extra firstExtra;
@@ -21,6 +21,8 @@ public class Receipt implements Ticket{
 
     @Override
     public Double total() {
+        sumExtrasCharge();
+        total = getOrder().getTotal();
         return total;
     }
 
@@ -34,15 +36,21 @@ public class Receipt implements Ticket{
         return firstExtra;
     }
 
+    private Boolean isThereChain() {
+        return getChain() != null;
+    }
+
     @Override
     public void sumExtrasCharge() {
-
+        if (isThereChain()) {
+            getChain().sumExtras(order);
+        }
     }
 
     @Override
     public void print() {
         DecimalFormat ft = new DecimalFormat("0.00");
         getOrder().display();
-        System.out.println("\tTOTAL --------> " + ft.format(total()) + "$");
+        System.out.println("\tTOTAL --------> " + ft.format(total) + "$");
     }
 }

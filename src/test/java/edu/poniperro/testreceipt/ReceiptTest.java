@@ -1,14 +1,21 @@
 package edu.poniperro.testreceipt;
 
 import Ticket.Receipt;
+import comanda.Comanda;
 import comanda.Order;
+import extras.*;
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class ReceiptTest {
     Receipt receipt;
     Order order;
-//    Extra cheese;
-//
-//    @Before
+    Extra cheese;
+
+    @Before
     public void setup_receipt() {
 
         order = new Order();
@@ -23,56 +30,56 @@ public class ReceiptTest {
         receipt = new Receipt(order);
     }
 
-    // integracion receipt con un Extra
-//    @Test
-//    public void sum_extra_cheese_test() {
-//
-//        cheese = new CheeseExtra();
-//        receipt.setChain(cheese);
-//        assertNotNull(receipt.getChain());
-//
-//        Comanda savedOrder = receipt.getOrder();
-//        assertNotNull(savedOrder);
-//        assertEquals(0d, savedOrder.getTotal(), 0d);
-//
-//        receipt.sumExtrasCharge();
-//        assertEquals(0.25d, receipt.getOrder().getTotal(), 0d);
-//    }
-//
-//    // integracion receipt con tres Extra
-//    @Test
-//    public void chain_test() {
-//
-//        cheese = new CheeseExtra();
-//        Extra sauce = new SauceExtra();
-//        Extra size = new SizeLargeExtra();
-//
-//        cheese.setNextExtra(sauce);
-//        sauce.setNextExtra(size);
-//
-//        receipt.setChain(cheese);
-//        assertNotNull(receipt.getChain());
-//
-//        receipt.sumExtrasCharge();
-//        assertEquals(2.25d, receipt.getOrder().getTotal(), 0d);
-//    }
-//
-//    // Total con regular y extras
-//    @Test
-//    public void total_w_extra_test() {
-//
-//        cheese = new CheeseExtra();
-//        Extra sauce = new SauceExtra();
-//        Extra size = new SizeLargeExtra();
-//
-//        Regular regular = new Regular();
-//        regular.setNextExtra(cheese);
-//        cheese.setNextExtra(sauce);
-//        sauce.setNextExtra(size);
-//
-//        receipt.setChain(regular);
-//        assertNotNull(receipt.getChain());
-//
-//        assertEquals(10.0d , receipt.total(), 0.1);
-//    }
+     // integracion receipt con un Extra
+    @Test
+    public void sum_extra_cheese_test() {
+
+        cheese = new CheeseExtra();
+        receipt.setChain(cheese);
+        assertNotNull(receipt.getChain());
+
+        Comanda savedOrder = receipt.getOrder();
+        assertNotNull(savedOrder);
+        assertEquals(0d, savedOrder.getTotal(), 0d);
+
+        receipt.sumExtrasCharge();
+        assertEquals(0.25d, receipt.getOrder().getTotal(), 0d);
+    }
+
+    // integracion receipt con tres Extra
+    @Test
+    public void chain_test() {
+
+        cheese = new CheeseExtra();
+        Extra sauce = new SauceExtra();
+        Extra size = new SizeLargeExtra();
+
+        cheese.setNextExtra(sauce);
+        sauce.setNextExtra(size);
+
+        receipt.setChain(cheese);
+        assertNotNull(receipt.getChain());
+
+        receipt.sumExtrasCharge();
+        assertEquals(2.25d, receipt.getOrder().getTotal(), 0d);
+    }
+
+    // Total con regular y extras
+    @Test
+    public void total_w_extra_test() {
+
+        cheese = new CheeseExtra();
+        Extra sauce = new SauceExtra();
+        Extra size = new SizeLargeExtra();
+
+        Regular regular = new Regular();
+        regular.setNextExtra(cheese);
+        cheese.setNextExtra(sauce);
+        sauce.setNextExtra(size);
+
+        receipt.setChain(regular);
+        assertNotNull(receipt.getChain());
+
+        assertEquals(10.0d , receipt.total(), 0.1);
+    }
 }

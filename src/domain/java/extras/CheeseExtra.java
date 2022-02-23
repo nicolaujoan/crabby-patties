@@ -5,7 +5,6 @@ import comanda.Comanda;
 import product.Item;
 
 import java.util.List;
-import java.util.Objects;
 
 public class CheeseExtra extends Extra{
     private Double CHEESE_PRICE = 0.25;  // done this because need to init prices to take the prices
@@ -18,9 +17,10 @@ public class CheeseExtra extends Extra{
     public void sumExtras(Comanda comanda) {
         List<Item> items = comanda.itemList();
         for (Item item: items) {
-            if (Objects.equals(item.extra(), extraProduct)) {
+            if (item.extra() == extraProduct) {
                 comanda.updateTotal(CHEESE_PRICE);
             }
         }
+        nextExtra.ifPresent(extra -> extra.sumExtras(comanda));
     }
 }

@@ -4,6 +4,7 @@ import Ticket.Ticket;
 import Ticket.Receipt;
 import comanda.Comanda;
 import comanda.Order;
+import extras.*;
 import product.Item;
 import product.Prices;
 import product.Product;
@@ -171,14 +172,15 @@ public class App {
          * El precio total de la comanda se guarda en Order.
          */
 
-//        Extra regular = new Regular(); // suma el precio base
-//        Extra cheese = new CheeseExtra(); // suma el precio del extra cheese
-//        Extra sauce = new SauceExtra(); // suma el precio de sauce
-//        Extra size = new SizeLargeExtra(); // suma el precio del tamanho Large
+        Extra regular = new Regular(); // suma el precio base
+        Extra cheese = new CheeseExtra(); // suma el precio del extra cheese
+        Extra sauce = new SauceExtra(); // suma el precio de sauce
+        Extra size = new SizeLargeExtra(); // suma el precio del tamanho Large
 
-//        regular.setNextExtra(cheese);
-//        cheese.setNextExtra(sauce);
-//        sauce.setNextExtra(size);
+        // se configura la cadena
+        regular.setNextExtra(cheese);
+        cheese.setNextExtra(sauce);
+        sauce.setNextExtra(size);
 
         /*
          * Squidward Tentacles genera el recibo,
@@ -188,11 +190,11 @@ public class App {
 
         System.out.print("\n\t --- PRINTIG RECEIPT BIPBIPBIP ---  \n");
 
-//        Ticket receiptExtra = new Receipt(order);
-//        receiptExtra.setChain(regular);
-//
-//        receiptExtra.total();
-//        receiptExtra.print();
+        Ticket receiptExtra = new Receipt(order);
+        receiptExtra.setChain(regular);
+
+        receiptExtra.total();
+        receiptExtra.print();
 
     }
 

@@ -14,5 +14,6 @@ public class Regular extends Extra{
         for (Item item: items) {
             comanda.updateTotal(item.price());
         }
+        nextExtra.ifPresent(extra -> nextExtra.get().sumExtras(comanda));
     }
 }
