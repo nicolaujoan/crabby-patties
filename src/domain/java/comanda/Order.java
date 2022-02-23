@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Order implements Comanda{
-    private Double total;
+    private Double total = 0.00;
     private List<Item> items = new ArrayList<>();
 
     public Order(){}
@@ -39,7 +39,7 @@ public class Order implements Comanda{
 
     @Override
     public void updateTotal(Double price) {
-        itemList().forEach(item -> total += item.price());
+        total += price;
     }
 
     @Override

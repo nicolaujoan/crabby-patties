@@ -1,12 +1,14 @@
 package Ticket;
 
 import comanda.Comanda;
+import extras.Extra;
 
 import java.text.DecimalFormat;
 
 public class Receipt implements Ticket{
     private Double total = 0.00;
-    private Comanda order = null;
+    public Comanda order;
+    public Extra firstExtra;
 
     public Receipt(Comanda order) {
         this.order = order;
@@ -20,6 +22,16 @@ public class Receipt implements Ticket{
     @Override
     public Double total() {
         return total;
+    }
+
+    @Override
+    public void setChain(Extra extra) {
+        firstExtra = extra;
+    }
+
+    @Override
+    public Extra getChain() {
+        return firstExtra;
     }
 
     @Override

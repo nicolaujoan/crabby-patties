@@ -13,8 +13,8 @@ public abstract class Extra {
 
     public Extra(){}
 
-    public void setNextExtra(Extra extra) {
-
+    public void setNextExtra(Extra nextExtra) {
+        this.nextExtra = Optional.of(nextExtra);
     }
 
     public abstract void sumExtras(Comanda comanda);
