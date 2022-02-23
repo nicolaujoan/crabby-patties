@@ -1,7 +1,7 @@
-package Ticket;
+package edu.poniperro.domain.Ticket;
 
-import comanda.Comanda;
-import extras.Extra;
+import edu.poniperro.domain.comanda.Comanda;
+import edu.poniperro.domain.extras.Extra;
 
 public interface Ticket {
     Comanda getOrder();

@@ -1,16 +1,15 @@
-package extras;
+package edu.poniperro.domain.extras;
 
-
-import comanda.Comanda;
-import product.Item;
+import edu.poniperro.domain.comanda.Comanda;
+import edu.poniperro.domain.product.Item;
 
 import java.util.List;
 
-public class CheeseExtra extends Extra{
-    private Double CHEESE_PRICE = 0.25;  // done this because need to init prices to take the prices
+public class SauceExtra extends Extra {
+    private Double SAUCE_PRICE = 0.50;
 
-    public CheeseExtra(){
-        extraProduct = CHEESE;
+    public SauceExtra(){
+        extraProduct = SAUCE;
     }
 
     @Override
@@ -18,7 +17,7 @@ public class CheeseExtra extends Extra{
         List<Item> items = comanda.itemList();
         for (Item item: items) {
             if (item.extra() == extraProduct) {
-                comanda.updateTotal(CHEESE_PRICE);
+                comanda.updateTotal(SAUCE_PRICE);
             }
         }
         nextExtra.ifPresent(extra -> extra.sumExtras(comanda));

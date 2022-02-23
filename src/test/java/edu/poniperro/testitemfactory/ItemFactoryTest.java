@@ -3,9 +3,9 @@ package edu.poniperro.testitemfactory;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
-import product.Item;
-import product.ItemFactory;
-import product.Prices;
+import edu.poniperro.domain.product.Item;
+import edu.poniperro.domain.product.ItemFactory;
+import edu.poniperro.domain.product.Prices;
 
 public class ItemFactoryTest {
 

@@ -1,9 +1,9 @@
 package edu.poniperro.testextras;
 
-import Ticket.Receipt;
-import comanda.Order;
-import extras.CheeseExtra;
-import extras.Extra;
+import edu.poniperro.domain.Ticket.Receipt;
+import edu.poniperro.domain.comanda.Order;
+import edu.poniperro.domain.extras.CheeseExtra;
+import edu.poniperro.domain.extras.Extra;
 import org.junit.BeforeClass;
 import org.junit.Test;
 

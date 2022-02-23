@@ -1,13 +1,13 @@
 package edu.poniperro;
 
-import Ticket.Ticket;
-import Ticket.Receipt;
-import comanda.Comanda;
-import comanda.Order;
-import extras.*;
-import product.Item;
-import product.Prices;
-import product.Product;
+import edu.poniperro.domain.Ticket.Ticket;
+import edu.poniperro.domain.Ticket.Receipt;
+import edu.poniperro.domain.comanda.Comanda;
+import edu.poniperro.domain.comanda.Order;
+import edu.poniperro.domain.extras.*;
+import edu.poniperro.domain.product.Item;
+import edu.poniperro.domain.product.Prices;
+import edu.poniperro.domain.product.Product;
 
 public class App {
     public static void main(String[] args) {

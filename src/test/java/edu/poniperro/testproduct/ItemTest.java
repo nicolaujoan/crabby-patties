@@ -1,11 +1,11 @@
 package edu.poniperro.testproduct;
 
-import static org.junit.Assert.*;
-import org.junit.Test;
+import edu.poniperro.domain.product.Item;
+import edu.poniperro.domain.product.Product;
 import org.junit.Before;
-import org.junit.BeforeClass;
-import product.Item;
-import product.Product;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class ItemTest {
     Product patty = null;

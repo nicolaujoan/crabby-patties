@@ -1,4 +1,4 @@
-package product;
+package edu.poniperro.domain.product;
 
 public interface Product {
     String name();

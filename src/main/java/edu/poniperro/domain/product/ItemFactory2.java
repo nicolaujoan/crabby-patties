@@ -1,4 +1,4 @@
-package product;
+package edu.poniperro.domain.product;
 
 import java.util.HashMap;
 import java.util.Map;

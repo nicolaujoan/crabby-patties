@@ -1,10 +1,10 @@
-package product;
+package edu.poniperro.domain.product;
 
 public enum ExtrasInfo {
     CHEESE(0.25), SAUCE(0.50), MEDIUM(0.25), LARGE(0.50);
 
     // declaring private variable for getting values
-    private Double price;
+    private final Double price;
 
     // getter method
     public Double getPrice() {

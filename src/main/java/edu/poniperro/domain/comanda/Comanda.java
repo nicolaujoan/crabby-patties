@@ -1,6 +1,7 @@
-package comanda;
+package edu.poniperro.domain.comanda;
 
-import product.Item;
+import edu.poniperro.domain.product.Item;
+import edu.poniperro.domain.product.Item;
 
 import java.util.List;
 

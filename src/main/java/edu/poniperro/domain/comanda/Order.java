@@ -1,7 +1,7 @@
-package comanda;
+package edu.poniperro.domain.comanda;
 
-import product.Item;
-import product.ItemFactory;
+import edu.poniperro.domain.product.Item;
+import edu.poniperro.domain.product.ItemFactory;
 
 import java.util.ArrayList;
 import java.util.List;

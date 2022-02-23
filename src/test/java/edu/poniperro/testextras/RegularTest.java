@@ -1,9 +1,9 @@
 package edu.poniperro.testextras;
 import static org.junit.Assert.*;
 import org.junit.Test;
-import Ticket.Receipt;
-import comanda.Order;
-import extras.Regular;
+import edu.poniperro.domain.Ticket.Receipt;
+import edu.poniperro.domain.comanda.Order;
+import edu.poniperro.domain.extras.Regular;
 
 public class RegularTest {
 

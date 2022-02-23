@@ -1,4 +1,4 @@
-package product;
+package edu.poniperro.domain.product;
 
 import java.text.DecimalFormat;
 

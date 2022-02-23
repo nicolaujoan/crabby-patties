@@ -1,6 +1,6 @@
-package extras;
+package edu.poniperro.domain.extras;
 
-import comanda.Comanda;
+import edu.poniperro.domain.comanda.Comanda;
 
 import java.util.Optional;
 

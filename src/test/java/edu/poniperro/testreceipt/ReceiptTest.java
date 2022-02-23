@@ -1,9 +1,9 @@
 package edu.poniperro.testreceipt;
 
-import Ticket.Receipt;
-import comanda.Comanda;
-import comanda.Order;
-import extras.*;
+import edu.poniperro.domain.Ticket.Receipt;
+import edu.poniperro.domain.comanda.Comanda;
+import edu.poniperro.domain.comanda.Order;
+import edu.poniperro.domain.extras.*;
 import org.junit.Before;
 import org.junit.Test;
 
